@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +12,183 @@
 </head>
 
 <body>
-    <h1>hola</h1>
+    <main class="mx-auto">
+        <div x-data="{currentTab: $persist(1)}"
+            class="max-w-md min-h-[30rem] my-10 mx-auto bg-white rounded-xl  overflow-hidden md:max-w-2xl">
+            <div class="md:flex ">
+                <div class="md:shrink-0">
+                    <div class="grid gird-cols-1 grid-rows-3">
+                        <!-- tab menu -->
+
+                        <a href="#" @click.prevent="currentTab = '1'"
+                            class="border-t-2 border-r-2 py-2 px-5">Portada</a>
+                        <a href="#" @click.prevent="currentTab = '2'"
+                            class="border-t-2 border-r-2 py-2 px-5">Sumario</a>
+                        <a href="#" @click.prevent="currentTab = '3'" class="border-t-2 border-r-2 py-2 px-5">Textos</a>
+
+                    </div><!-- end tab menu -->
+                </div>
+                <div class="p-8">
+
+                    <div x-show="currentTab === '1' ">
+                        <!-- cover div -->
+                        <h1 class="text-center font-bold">EL ETERNO PROYECTO PRESENTA</h1>
+                        <h4 class="text-center">poesía mediocre del ayer y del hoy en una ciudad maldita</h4>
+                        <figure>
+                            <img src="assets/mareaNegra.jpg" alt="fanzine en el suelo">
+                            <figcaption>Lectura 2. Iximulew. 2017. </figcaption>
+                        </figure>
+
+                    </div><!-- end cover div -->
+
+                    <div x-show="currentTab === '2'">
+                        <!-- sumary div -->
+                        <p>
+
+                        </p>
+
+                    </div><!-- end sumary div -->
+
+                    <div x-show="currentTab === '3'">
+                        <!-- entrada -->
+                        <details>
+                            <!-- titulo -->
+                            <summary class="font-bold">
+                                Ofrenda - 2017
+                            </summary>
+                            <!-- titulo -->
+                            <!-- cuerpo -->
+                            <div class="bg-black text-white">
+                                <p class="">
+                                    En noviembre nací de la carne<br>
+                                    como tributo<br>
+                                    En mis venas, la sangre de la salvación<br>
+                                    se mezcló con el ébano grito de su misterio<br>
+                                    ¿En qué momento el creador tiene control sobre su creación?
+                                </p>
+                                <ul class="text-sm list-disc text-white">
+
+                                    <li>ntng</li>
+                                </ul>
+
+                                <img src="assets/a0831846353_10.jpg" alt="Foto del sujeto" />
+
+                            </div>
+                            <!-- cuerpo -->
+                        </details>
+                        <!-- entrada -->
+                        <!-- entrada -->
+                        <details>
+                            <!-- titulo -->
+                            <summary class="font-bold">
+                                Usá mi piel - 2016
+                            </summary>
+                            <!-- titulo -->
+                            <!-- cuerpo -->
+                            <div class="bg-black text-white">
+                                <p class="">
+                                    Vestite de un animal sin dios <br>
+                                    Que se desliza en la agonía <br>
+                                    De respirar el aire prestado <br>
+                                    Que cuando cierra los ojos <br>
+                                    Piensa en no abrirlos otra vez <br>
+                                    Por la comedia de que algún día <br>
+                                    No será una broma hacerse el ciego
+                                    <br>
+                                    <br>
+                                    Jugar a subir escaleras <br>
+                                    Para saltar del último nivel <br>
+                                    Siempre fue el chiste más doloroso <br>
+                                    Por caer de pie y destruir <br>
+                                    Los huesos de esta caja negra <br>
+                                    Que recuerda en todo momento <br>
+                                    La condena del hombre
+                                    <br>
+                                    <br>
+                                    Aunque vengan mil ángeles <br>
+                                    A tomarme el pelo <br>
+                                    Y me ofrezcan una cama en la eternidad<br>
+                                    Jamás perdonaré esta estadía<br>
+                                    En el purgatorio<br>
+                                    Aunque Dios me cure<br>
+                                    Del estigma de existir a medias<br>
+                                    Jamás perdonaré sus malas intenciones<br>
+                                    Por todos aquellos que nunca se salvaron<br>
+                                    <br>
+                                    <br>
+                                    Porque la desilusión está en mí<br>
+                                    Como está en el aire<br>
+                                    Al igual que la inevitable
+                                    Sepultura<br>
+                                    Y la culpa de hacer llorar<br>
+                                    A las estatuas vencidas<br>
+                                    <br>
+                                    <br>
+                                    Está aquí:<br>
+                                    El sufrimiento<br>
+                                    Y el verdadero dolor<br>
+                                    Está en nuestro sistema nervioso<br>
+                                    Que no engaña a Nadie<br>
+                                    Y del cual Nadie se va a salvar<br>
+                                    NUNCA
+
+                                </p>
+                                <ul class="text-sm list-disc text-white">
+
+                                    <li>ntng</li>
+                                </ul>
+
+
+                            </div>
+                            <!-- cuerpo -->
+                        </details>
+                        <!-- entrada -->
+
+                        <details>
+                            <!-- titulo -->
+                            <summary class="font-bold">
+                                Sin titulo - 2016
+                            </summary>
+                            <!-- titulo -->
+                            <!-- cuerpo -->
+                            <div class="bg-black text-white">
+                                <p class="">
+                                    Entonces, te encuentro a vos<br>
+                                    Con los ojos llenos de un mundo y de personas que no conozco<br>
+                                    Repitiendo palabras en un idioma que no conozco<br>
+                                    Y no sé nada de tus manos frías<br>
+                                    Ni de la soledad que acarician<br>
+                                    Pero cuando pasás, el frío se vuelve distinto<br>
+                                    Y la soledad se siente más cómoda<br>
+                                    Y las luces de la ciudad<br>
+                                    Iluminan tu cuerpo que se desliza<br>
+                                    Por las calles como un fantasma<br>
+                                    Y te veo alejarte entre una multitud de personas<br>
+                                    Mientras desaparecés lentamente<br>
+                                    y las luces se apagan una a una<br>
+                                    Y el silencio inunda los edificios de una soledad insaciable<br>
+                                    Y la vida después de vos<br>
+                                    se acaba lenta-mente<br>
+
+
+                                </p>
+                                <ul class="text-sm list-disc text-white">
+
+                                    <li>ntng</li>
+                                </ul>
+
+
+                            </div>
+                            <!-- cuerpo -->
+                        </details>
+                        <!-- entrada -->
+
+
+                    </div>
+                </div>
+            </div>
+
+    </main>
 </body>
 
 </html>
